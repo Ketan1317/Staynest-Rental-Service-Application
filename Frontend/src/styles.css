@@ -1,0 +1,144 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * StayNest — "Midnight Marble" design system
+ * Polished black with brushed brass accents.
+ * Serif: Cormorant Garamond (display). Sans: Manrope (body).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-obsidian: var(--obsidian);
+  --color-charcoal: var(--charcoal);
+  --color-surface: var(--surface);
+  --color-brass: var(--brass);
+  --color-brass-hover: var(--brass-hover);
+  --color-brass-dim: var(--brass-dim);
+  --color-paper: var(--paper);
+  --color-ash: var(--ash);
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-elegant: 0 20px 40px -15px oklch(0 0 0 / 0.8);
+  --shadow-glow: 0 0 60px -10px oklch(0.78 0.09 80 / 0.25);
+
+  --animate-fade-up: fade-up 0.7s ease-out forwards;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Midnight Marble palette (always dark — single theme app) */
+  --obsidian: oklch(0.12 0.005 270);
+  --charcoal: oklch(0.16 0.005 270);
+  --surface: oklch(0.20 0.006 270);
+  --brass: oklch(0.78 0.09 80);
+  --brass-hover: oklch(0.85 0.08 85);
+  --brass-dim: oklch(0.58 0.07 80);
+  --paper: oklch(0.96 0.005 90);
+  --ash: oklch(0.62 0.008 80);
+
+  --background: var(--obsidian);
+  --foreground: var(--paper);
+  --card: var(--charcoal);
+  --card-foreground: var(--paper);
+  --popover: var(--charcoal);
+  --popover-foreground: var(--paper);
+  --primary: var(--brass);
+  --primary-foreground: var(--obsidian);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--paper);
+  --muted: var(--surface);
+  --muted-foreground: var(--ash);
+  --accent: var(--surface);
+  --accent-foreground: var(--brass);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: var(--paper);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: var(--brass);
+
+  --chart-1: var(--brass);
+  --chart-2: oklch(0.55 0.12 200);
+  --chart-3: oklch(0.7 0.15 160);
+  --chart-4: oklch(0.65 0.2 30);
+  --chart-5: oklch(0.6 0.18 300);
+
+  --sidebar: var(--charcoal);
+  --sidebar-foreground: var(--paper);
+  --sidebar-primary: var(--brass);
+  --sidebar-primary-foreground: var(--obsidian);
+  --sidebar-accent: var(--surface);
+  --sidebar-accent-foreground: var(--paper);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: var(--brass);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--brass);
+    color: var(--obsidian);
+  }
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans { font-family: var(--font-sans); }
+}
