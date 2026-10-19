@@ -1,7 +1,6 @@
-// StayNest API client
 export const API_BASE =
   (typeof import.meta !== "undefined" && (import.meta as any).env?.VITE_API_URL) ||
-  "https://rental-service-1-2iuk.onrender.com";
+  "http://localhost:5000";
 
 const TOKEN_KEY = "staynest_token";
 const USER_KEY = "staynest_user";
